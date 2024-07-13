@@ -7,10 +7,26 @@ assignees: ''
 
 ---
 
-As a **role** I can **capability** so that **received benefit**
+As a **registered user**, I want **to log in to my account with my email address and password**, so that **I can access personalized features**
 
-- Acceptance criteria 1
+## Acceptance Criteria
 
-- Acceptance criteria 2
+- **Given** that I am on the login page
 
-- Acceptance criteria 3
+- **When** I enter my registered email address and correct password
+
+- **Then** I should successfully log in and be redirected to my account dashboard
+
+## Tasks
+
+ - Task 1 – Create a login form with fields for email and password
+
+ - Task 2 – Implement backend authentication to verify user credentials
+
+ - Task 3 – Redirect user to the dashboard upon successful login
+
+## Iteration: 1
+
+## Points: 4
+
+## Epic: #11
