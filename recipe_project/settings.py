@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.staticfiles',
     'recipe_blog',
+    'users',
 ]
 
 MIDDLEWARE = [
