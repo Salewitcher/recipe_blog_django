@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recipe Project</title>
+</head>
+<body>
+    <header>
+        <h1>Recipe Project</h1>
+        <nav>
+            <a href="{% url 'account_login' %}">Login</a>
+            <a href="{% url 'account_signup' %}">Sign Up</a>
+            <a href="{% url 'account_logout' %}">Logout</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>
