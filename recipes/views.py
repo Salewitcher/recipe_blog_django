@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import RecipeForm
 from .models import Recipe
+from django.db.models import Q
 
 # Create your views here.
 
@@ -20,7 +21,11 @@ def create_recipe(request):
 
 @login_required
 def recipe_list(request):
-    recipes = Recipe.objects.filter(created_by=request.user)
+    query = request.GET.get('q')
+    if query:
+        recipes = Recipe.objects.filter(Q(title__icontains=query) | Q(ingredients__icontains=query), created_by=request.user)
+    else:
+        recipes = Recipe.objects.filter(created_by=request.user)
     return render(request, 'recipes/recipe_list.html', {'recipes': recipes})
 
 @login_required
