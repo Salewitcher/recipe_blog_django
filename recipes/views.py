@@ -39,3 +39,11 @@ def edit_recipe(request, id):
     else:
         form = RecipeForm(instance=recipe)
     return render(request, 'recipes/recipe_form.html', {'form': form})
+
+@login_required
+def delete_recipe(request, id):
+    recipe = get_object_or_404(Recipe, id=id, created_by=request.user)
+    if request.method == 'POST':
+        recipe.delete()
+        return redirect('recipe_list')
+    return render(request, 'recipes/recipe_detail.html', {'recipe': recipe})
