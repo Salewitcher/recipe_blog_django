@@ -7,7 +7,7 @@
 <p><strong>Instructions:</strong></p>
 <p>{{ recipe.instructions }}</p>
 <a href="{% url 'edit_recipe' recipe.id %}">Edit</a>
-<form action="{% url 'delete_recipe' recipe.id %}" method="post" style="display:inline;">
+<form id="deleteForm" action="{% url 'delete_recipe' recipe.id %}" method="post" style="display:inline;">
     {% csrf_token %}
     <button type="submit">Delete</button>
 </form>

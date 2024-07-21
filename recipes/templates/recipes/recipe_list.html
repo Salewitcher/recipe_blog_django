@@ -2,9 +2,15 @@
 
 {% block content %}
 <h2>Your Recipes</h2>
+<form method="GET" action="{% url 'recipe_list' %}">
+    <input type="text" name="q" placeholder="Search recipes..." value="{{ request.GET.q }}">
+    <button type="submit">Search</button>
+</form>
 <ul>
     {% for recipe in recipes %}
         <li><a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.title }}</a></li>
+    {% empty %}
+        <li>No recipes found.</li>
     {% endfor %}
 </ul>
 <a href="{% url 'create_recipe' %}">Create a New Recipe</a>
