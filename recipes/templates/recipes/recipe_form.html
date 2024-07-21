@@ -2,9 +2,22 @@
 
 {% block content %}
 <h2>Create a New Recipe</h2>
-<form method="post">
+<form method="post" id="recipeForm">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Save Recipe</button>
 </form>
+
+<script>
+    document.getElementById('recipeForm').addEventListener('submit', function(event) {
+        const title = document.getElementById('id_title').value;
+        const ingredients = document.getElementById('id_ingredients').value;
+        const instructions = document.getElementById('id_instructions').value;
+
+        if (!title || !ingredients || !instructions) {
+            event.preventDefault();
+            alert('Please fill in all fields.');
+        }
+    });
+</script>
 {% endblock %}
