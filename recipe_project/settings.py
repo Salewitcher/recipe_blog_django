@@ -189,6 +189,12 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+
+# LOGIN REDIRECT URL?
+
+LOGIN_REDIRECT_URL = '/dashboard/'
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
@@ -198,6 +204,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 ACCOUNT_FORMS = {
     'signup': 'users.forms.CustomSignupForm',
 }
+
 
 # IS THE BELOW CORRECT?
 
