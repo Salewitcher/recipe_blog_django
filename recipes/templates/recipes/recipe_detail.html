@@ -1,16 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>{{ recipe.title }}</h2>
-<p><strong>Ingredients:</strong></p>
-<p>{{ recipe.ingredients }}</p>
-<p><strong>Instructions:</strong></p>
-<p>{{ recipe.instructions }}</p>
-<a href="{% url 'edit_recipe' recipe.id %}">Edit</a>
-<form id="deleteForm" action="{% url 'delete_recipe' recipe.id %}" method="post" style="display:inline;">
-    {% csrf_token %}
-    <button type="submit">Delete</button>
-</form>
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title">{{ recipe.title }}</h2>
+        <p><strong>Ingredients:</strong></p>
+        <p>{{ recipe.ingredients }}</p>
+        <p><strong>Instructions:</strong></p>
+        <p>{{ recipe.instructions }}</p>
+        <a href="{% url 'edit_recipe' recipe.id %}" class="btn btn-primary">Edit</a>
+        <form id="deleteForm" action="{% url 'delete_recipe' recipe.id %}" method="post" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+    </div>
+</div>
 
 <script>
     document.getElementById('deleteForm').addEventListener('submit', function(event) {
