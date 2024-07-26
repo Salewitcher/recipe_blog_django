@@ -2,16 +2,23 @@
 
 {% block content %}
 <h2>Your Recipes</h2>
-<form method="GET" action="{% url 'recipe_list' %}">
-    <input type="text" name="q" placeholder="Search recipes..." value="{{ request.GET.q }}">
-    <button type="submit">Search</button>
+<form method="GET" action="{% url 'recipe_list' %}" class="form-inline mb-3">
+    <input type="text" name="q" placeholder="Search recipes..." class="form-control mr-2" value="{{ request.GET.q }}">
+    <button type="submit" class="btn btn-primary">Search</button>
 </form>
-<ul>
+<div class="row">
     {% for recipe in recipes %}
-        <li><a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.title }}</a></li>
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.title }}</a></h5>
+                    <p class="card-text">{{ recipe.description|truncatewords:20 }}</p>
+                </div>
+            </div>
+        </div>
     {% empty %}
-        <li>No recipes found.</li>
+        <p>No recipes found.</p>
     {% endfor %}
-</ul>
-<a href="{% url 'create_recipe' %}">Create a New Recipe</a>
+</div>
+<a href="{% url 'create_recipe' %}" class="btn btn-success">Create a New Recipe</a>
 {% endblock %}
