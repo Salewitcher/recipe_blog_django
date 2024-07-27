@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from recipes.views import index
 
 urlpatterns = [
     path('', include('recipe_blog.urls')),
@@ -23,4 +24,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('', include('users.urls')),
     path('recipes/', include('recipes.urls')),
+    path('', index, name='index'),
 ]

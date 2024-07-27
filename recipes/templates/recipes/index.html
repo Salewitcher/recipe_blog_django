@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home - Recipe Project
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <h1>Welcome to Recipe Project</h1>
+    <p class="lead">Discover and share your favorite recipes</p>
+    <a class="btn btn-primary btn-lg" href="{% url 'recipe_list' %}" role="button">Browse Recipes</a>
+</div>
+
+<div class="container">
+    <div class="row">
+        {% for recipe in recipes %}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img class="card-img-top" src="{{ recipe.image.url }}" alt="Recipe image">
+                <div class="card-body">
+                    <h5 class="card-title">{{ recipe.title }}</h5>
+                    <p class="card-text">{{ recipe.description|truncatewords:20 }}</p>
+                    <a href="{% url 'recipe_detail' recipe.id %}" class="btn btn-primary">View Recipe</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

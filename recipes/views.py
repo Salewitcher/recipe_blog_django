@@ -52,3 +52,7 @@ def delete_recipe(request, id):
         recipe.delete()
         return redirect('recipe_list')
     return render(request, 'recipes/recipe_detail.html', {'recipe': recipe})
+
+def index(request):
+    recipes = Recipe.objects.all()[:6]  # Get the latest 6 recipes
+    return render(request, 'index.html', {'recipes': recipes})
