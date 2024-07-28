@@ -1,4 +1,5 @@
 from django.urls import path
+from .views import index
 from . import views
 
 urlpatterns = [
@@ -7,4 +8,5 @@ urlpatterns = [
     path('edit/<int:id>/', views.edit_recipe, name='edit_recipe'),
     path('delete/<int:id>/', views.delete_recipe, name='delete_recipe'),
     path('', views.recipe_list, name='recipe_list'),
+    path('', index, name='index'),
 ]

@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import RecipeForm
 from .models import Recipe
 from django.db.models import Q
+from django.shortcuts import render
 
 # Create your views here.
 
@@ -55,4 +56,4 @@ def delete_recipe(request, id):
 
 def index(request):
     recipes = Recipe.objects.all()[:6]  # Get the latest 6 recipes
-    return render(request, 'index.html', {'recipes': recipes})
+    return render(request, 'recipes/index.html', {'recipes': recipes})
