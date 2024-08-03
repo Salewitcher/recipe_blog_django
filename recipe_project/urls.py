@@ -17,11 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from recipes import views as recipe_views
+from users.views import dashboard
 
 urlpatterns = [
     
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
+    path('accounts/dashboard/', dashboard, name='account_dashboard'),
     path('users/', include('users.urls')),
     path('recipes/', include('recipes.urls')),
     path('', recipe_views.index, name='index'),
