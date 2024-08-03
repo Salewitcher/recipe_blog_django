@@ -22,7 +22,7 @@ urlpatterns = [
     
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-    path('', include('users.urls')),
+    path('users/', include('users.urls')),
     path('recipes/', include('recipes.urls')),
     path('', recipe_views.index, name='index'),
     
