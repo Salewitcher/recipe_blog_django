@@ -27,6 +27,7 @@ urlpatterns = [
     path('users/', include('users.urls')),
     path('recipes/', include('recipes.urls')),
     path('', recipe_views.index, name='index'),
+    path('', include('recipes.urls')),  # Redirect the root URL to recipes
     
     
 ]

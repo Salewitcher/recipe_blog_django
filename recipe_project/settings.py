@@ -45,8 +45,6 @@ AUTHENTICATION_BACKENDS = [
     
 ]
 
-SITE_ID = 1
-
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {
         'METHOD': 'oauth2',
@@ -94,6 +92,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.messages',
     
+    'django.contrib.staticfiles',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -102,10 +101,15 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.staticfiles',
     'users',
     'recipes',
 ]
+
+
+# Authentication settings
+SITE_ID = 1
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGOUT_REDIRECT_URL = 'login'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -198,12 +202,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
-# Authentication settings
-
-LOGIN_REDIRECT_URL = 'dashboard'
-LOGOUT_REDIRECT_URL = 'login'
 
 
 # Default primary key field type
