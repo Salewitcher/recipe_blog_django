@@ -4,6 +4,8 @@
 Login - Recipe Project
 {% endblock %}
 
+{% load widget_tweaks %}
+
 {% block content %}
 <div class="container mt-4">
     <h1 class="text-center mb-4">Log in</h1>
@@ -18,14 +20,16 @@ Login - Recipe Project
                 <div class="card-body">
                     <form method="post" action="{% url 'account_login' %}">
                         {% csrf_token %}
-                        <div class="form-group">
-                            {{ form.username.label_tag(class='form-label') }}
-                            {{ form.username|add_class:"form-control" }}
-                        </div>
-                        <div class="form-group">
-                            {{ form.password.label_tag(class='form-label') }}
-                            {{ form.password|add_class:"form-control" }}
-                        </div>
+                        <fieldset>
+                            <div class="form-group">
+                                {{ form.login.label_tag }} <!-- Correct label tag without class attribute -->
+                                {{ form.login|add_class:"form-control" }} <!-- Use add_class to add form-control class -->
+                            </div>
+                            <div class="form-group">
+                                {{ form.password.label_tag }}
+                                {{ form.password|add_class:"form-control" }}
+                            </div>
+                        </fieldset>
                         <button type="submit" class="btn btn-primary btn-block">Login</button>
                     </form>
                 </div>
