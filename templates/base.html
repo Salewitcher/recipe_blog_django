@@ -10,9 +10,9 @@
     <meta name="author" content="Sasho Stojkoski">
     <meta name="robots" content="index, follow">
 
-    <title>{% block title %}Recipe Project{% endblock title%}</title>
+    <title>{% block title %}Recipe Project{% endblock title %}</title>
 
-    <!-- Google Fonts CSS -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
@@ -25,11 +25,6 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-
-    <!-- Scripts for Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-csQaT1CQZlE7oHOAbLHvFkBRRGZs6yMtXBoP3fwjtBnyj5tU6TO5lrsOhG5G5IIe" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -41,6 +36,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="{% url 'recipe_list' %}">Recipes</a></li>
                 {% if user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'create_recipe' %}">Create Recipe</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Logout</a></li>
                 {% else %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
@@ -58,6 +54,11 @@
         <a href="/privacy-policy" class="text-white">Privacy Policy</a> | 
         <a href="/terms-of-service" class="text-white">Terms of Service</a>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-csQaT1CQZlE7oHOAbLHvFkBRRGZs6yMtXBoP3fwjtBnyj5tU6TO5lrsOhG5G5IIe" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
