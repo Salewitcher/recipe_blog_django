@@ -1,12 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Create a New Recipe</h2>
-<form method="post" id="recipeForm">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save Recipe</button>
-</form>
+<div class="container my-4">
+    <h2 class="mb-4">{% if form.instance.pk %}Edit Recipe{% else %}Create a New Recipe{% endif %}</h2>
+
+    <form method="post" enctype="multipart/form-data" id="recipeForm">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success mt-3">Save Recipe</button>
+    </form>
+</div>
 
 <script>
     document.getElementById('recipeForm').addEventListener('submit', function(event) {
@@ -16,7 +19,7 @@
 
         if (!title || !ingredients || !instructions) {
             event.preventDefault();
-            alert('Please fill in all fields.');
+            alert('Please fill in all required fields.');
         }
     });
 </script>
