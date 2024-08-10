@@ -17,23 +17,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from recipes import views as recipe_views
-from users.views import dashboard
+from users.views import CustomLoginView, profile, dashboard
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-    path('accounts/dashboard/', dashboard, name='account_dashboard'),
-    path('users/', include('users.urls')),
+    path('accounts/login/', CustomLoginView.as_view(), name='login'),
+    path('accounts/profile/', profile, name='profile'),
+    path('accounts/dashboard/', dashboard, name='dashboard'),
     path('recipes/', include('recipes.urls')),
     path('', recipe_views.index, name='index'),
-    path('', include('recipes.urls')),  # Redirect the root URL to recipes
-    
     
 ]
 
-from django.conf import settings
-from django.conf.urls.static import static
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
