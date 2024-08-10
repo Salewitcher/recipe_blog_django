@@ -10,7 +10,7 @@ from django.shortcuts import render
 @login_required
 def create_recipe(request):
     if request.method == 'POST':
-        form = RecipeForm(request.POST)
+        form = RecipeForm(request.POST, request.FILES)
         if form.is_valid():
             recipe = form.save(commit=False)
             recipe.created_by = request.user
@@ -38,7 +38,7 @@ def recipe_detail(request, id):
 def edit_recipe(request, id):
     recipe = get_object_or_404(Recipe, id=id, created_by=request.user)
     if request.method == 'POST':
-        form = RecipeForm(request.POST, instance=recipe)
+        form = RecipeForm(request.POST, request.FILES, instance=recipe)
         if form.is_valid():
             form.save()
             return redirect('recipe_detail', id=recipe.id)
