@@ -16,4 +16,4 @@ def profile(request):
 
 @login_required
 def dashboard(request):
-    return render(request, 'users/dashboard.html')
+    return render(request, 'account/dashboard.html')
