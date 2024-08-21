@@ -1,131 +1,165 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Django Recipe Blog
 
-Welcome USER_NAME,
+The Django Recipe Blog is a web application built using the Django web framework. This app allows users to create, manage, and explore various recipes. Users can add, edit, and delete recipes, as well as upload images to accompany their culinary creations.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![Screenshot of how the app looks on different screen sizes](docs/images/responsive-screens.png)
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+## Table Of Contents:
+1. [User Stories](#user-stories)
+2. [Wireframes](#wireframes)
+3. [Database Diagram](#database-diagram)
+4. [Features](#features)
+5. [Future Features](#future-features)
+6. [Technologies Used](#technologies-used)
+7. [Testing](#testing)
+8. [Deployment](#deployment)
+9. [Credits](#credits)
 
-## Gitpod Reminders
+## User Stories
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+User stories define the functionality and features of the Recipe Blog app from the end-users' perspective:
 
-`python3 -m http.server`
+- As a user, I want to register and create an account so that I can manage my own recipes.
+- As a user, I can log in or log out to ensure my recipes are secure.
+- As a user, I want to create new recipes with a title, ingredients, and instructions.
+- As a user, I want to upload images to better illustrate my recipes.
+- As a user, I want to edit my recipes to update them.
+- As a user, I want to delete my recipes that I no longer need.
+- As a user, I want to search for recipes by title or ingredients.
+- As a user, I want to view all my recipes in a personal dashboard.
 
-A blue button should appear to click: _Make Public_,
+## Wireframes
 
-Another blue button should appear to click: _Open Browser_.
+Wireframes provide a visual representation of the app's layout and structure:
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+<details>
+    <summary>Home Page</summary>  
 
-A blue button should appear to click: _Make Public_,
+![Wireframe of home page](docs/images/home-page.jpg)  
+</details>
+  
+<details>
+    <summary>Recipe List Page</summary>  
+    
+![Wireframe of recipe list page](docs/images/recipe-list-page.jpg)  
+</details>  
 
-Another blue button should appear to click: _Open Browser_.
+<details>
+    <summary>Recipe Detail Page</summary>  
+    
+![Wireframe of recipe details page](docs/images/recipe-detail-page.jpg)  
+</details>  
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+<details>
+    <summary>User Dashboard Page</summary>  
+    
+![Wireframe of user dashboard page](docs/images/dashboard-page.jpg)  
+</details>
 
-To log into the Heroku toolbelt CLI:
+## Database Diagram
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+The database diagram was created using [drawSQL](https://drawsql.app).
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+![Database Diagram](docs/images/database-diagram.jpg)  
 
-### Connecting your Mongo database
+## Features 
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+- **User Registration and Authentication:** Users can create accounts, log in, and securely manage their recipes.
+![Registration and login](docs/images/register-login.jpg) 
 
-------
+- **Recipe Management:** Users can add, edit, and delete recipes, and upload images to make their recipes more appealing.
+![Recipe Management](docs/images/recipe-management.jpg) 
 
-## Release History
+- **Search Functionality:** Users can search for recipes based on the title or ingredients.
+![Search Functionality](docs/images/search-functionality.jpg) 
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- **Responsive Design:** The app is responsive and user-friendly on various devices, including mobile phones and tablets.
+![Responsive Design](docs/images/responsive-design.jpg) 
 
-**June 18, 2024,** Add Mongo back into template
+## Future Features
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+There are a few features that I would like to implement in future releases:
 
-**May 28 2024:** Fix Mongo and Links installs
+- **Recipe Rating System:** Allow users to rate recipes to help others discover the best ones.
+- **Comment Section:** Enable users to leave comments on recipes.
+- **Recipe Sharing:** Allow users to share recipes on social media.
 
-**April 26 2024:** Update node version to 16
+## Technologies Used
 
-**September 20 2023:** Update Python version to 3.9.17.
+- **[Django](https://www.djangoproject.com/):** Python-based web framework.
+- **[Python](https://www.python.org/):** Programming language used for backend development.
+- **[Bootstrap](https://getbootstrap.com/):** CSS framework for responsive design.
+- **[HTML](https://en.wikipedia.org/wiki/HTML):** Markup language for creating web pages.
+- **[CSS](https://en.wikipedia.org/wiki/CSS):** Style sheet language for designing web pages.
+- **[JavaScript](https://en.wikipedia.org/wiki/JavaScript):** Programming language for interactive web elements.
+- **[SQLite](https://www.sqlite.org/):** Database used in development.
+- **[Pillow](https://python-pillow.org/):** Image processing library used for handling image uploads.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## Testing
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### User Story Testing
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+#### User Registration and Login
+- **Scenario:** User registers a new account.
+  - **Test:** Ensure that users can register, log in, and access their dashboard.
+  - **Result:** Pass
+  
+#### Recipe Creation
+- **Scenario:** User creates a new recipe.
+  - **Test:** Verify that users can successfully create and save recipes.
+  - **Result:** Pass
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+#### Recipe Editing and Deletion
+- **Scenario:** User edits or deletes a recipe.
+  - **Test:** Ensure that users can edit existing recipes and delete recipes they no longer need.
+  - **Result:** Pass
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### Manual Testing
+| Feature               | Test Performed                                                     | Result  |
+|-----------------------|--------------------------------------------------------------------|---------|
+| Recipe Creation       | Users can create a new recipe.                                     | Pass    |
+| Recipe Editing        | Users can edit an existing recipe.                                 | Pass    |
+| Recipe Deletion       | Users can delete a recipe.                                         | Pass    |
+| Image Upload          | Users can upload an image when creating or editing a recipe.       | Pass    |
+| Search Functionality  | Users can search for recipes by title or ingredients.              | Pass    |
+| Responsiveness        | The app layout adjusts according to device size.                   | Pass    |
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### Automated Testing
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+Automated tests were created using Django's test framework:
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- **Views Testing:** Confirm that the correct templates are rendered and HTTP responses are as expected.
+- **Models Testing:** Validate that models behave as expected, including default values and field constraints.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+![Automated Testing](docs/images/automated-tests.jpg)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+## Deployment
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+The app was deployed to Heroku using the following steps:
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+1. **Create Repository on GitHub:**
+   - Set up a new repository using the Django template and clone it locally.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+2. **Install Dependencies:**
+   - Install required dependencies including Django, Pillow, and others listed in `requirements.txt`.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+3. **Create Heroku App:**
+   - Log in to Heroku, create a new app, and connect it to the GitHub repository.
 
-------
+4. **Set Environment Variables:**
+   - Configure environment variables for sensitive data such as `SECRET_KEY` and `DATABASE_URL`.
 
-## FAQ about the uptime script
+5. **Deploy to Heroku:**
+   - Deploy the app from the `main` branch of your GitHub repository.
 
-**Why have you added this script?**
+6. **Migrate Database:**
+   - Run database migrations on Heroku to set up the database schema.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+7. **Collect Static Files:**
+   - Use `python manage.py collectstatic` to collect static files for deployment.
 
-**How will this affect me?**
+## Credits
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+- **Code Institute:** For providing the foundation in Django development through their tutorials.
+- **YouTube Tutorials:** Several tutorials were used to understand and implement features in the app.
+- **Freepik and Vecteezy:** For providing images used in the project.
