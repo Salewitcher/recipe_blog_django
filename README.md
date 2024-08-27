@@ -6,14 +6,12 @@ The Django Recipe Blog is a web application built using the Django web framework
 
 ## Table Of Contents:
 1. [User Stories](#user-stories)
-2. [Wireframes](#wireframes)
-3. [Database Diagram](#database-diagram)
-4. [Features](#features)
-5. [Future Features](#future-features)
-6. [Technologies Used](#technologies-used)
-7. [Testing](#testing)
-8. [Deployment](#deployment)
-9. [Credits](#credits)
+2. [Features](#features)
+3. [Future Features](#future-features)
+4. [Technologies Used](#technologies-used)
+5. [Testing](#testing)
+6. [Deployment](#deployment)
+7. [Credits](#credits)
 
 ## User Stories
 
@@ -28,53 +26,16 @@ User stories define the functionality and features of the Recipe Blog app from t
 - As a user, I want to search for recipes by title or ingredients.
 - As a user, I want to view all my recipes in a personal dashboard.
 
-## Wireframes
-
-Wireframes provide a visual representation of the app's layout and structure:
-
-<details>
-    <summary>Home Page</summary>  
-
-![Wireframe of home page](docs/images/home-page.jpg)  
-</details>
-  
-<details>
-    <summary>Recipe List Page</summary>  
-    
-![Wireframe of recipe list page](docs/images/recipe-list-page.jpg)  
-</details>  
-
-<details>
-    <summary>Recipe Detail Page</summary>  
-    
-![Wireframe of recipe details page](docs/images/recipe-detail-page.jpg)  
-</details>  
-
-<details>
-    <summary>User Dashboard Page</summary>  
-    
-![Wireframe of user dashboard page](docs/images/dashboard-page.jpg)  
-</details>
-
-## Database Diagram
-
-The database diagram was created using [drawSQL](https://drawsql.app).
-
-![Database Diagram](docs/images/database-diagram.jpg)  
-
 ## Features 
 
 - **User Registration and Authentication:** Users can create accounts, log in, and securely manage their recipes.
-![Registration and login](docs/images/register-login.jpg) 
+![Registration and login](docs/images/register.png) (docs/images/login.png)
 
 - **Recipe Management:** Users can add, edit, and delete recipes, and upload images to make their recipes more appealing.
-![Recipe Management](docs/images/recipe-management.jpg) 
+![Recipe Management](docs/images/recipe-management.png) 
 
 - **Search Functionality:** Users can search for recipes based on the title or ingredients.
-![Search Functionality](docs/images/search-functionality.jpg) 
-
-- **Responsive Design:** The app is responsive and user-friendly on various devices, including mobile phones and tablets.
-![Responsive Design](docs/images/responsive-design.jpg) 
+![Search Functionality](docs/images/search-functionality.jpg)  
 
 ## Future Features
 
@@ -92,8 +53,7 @@ There are a few features that I would like to implement in future releases:
 - **[HTML](https://en.wikipedia.org/wiki/HTML):** Markup language for creating web pages.
 - **[CSS](https://en.wikipedia.org/wiki/CSS):** Style sheet language for designing web pages.
 - **[JavaScript](https://en.wikipedia.org/wiki/JavaScript):** Programming language for interactive web elements.
-- **[SQLite](https://www.sqlite.org/):** Database used in development.
-- **[Pillow](https://python-pillow.org/):** Image processing library used for handling image uploads.
+- **[PostgreSQL](https://www.postgresql.org/):** Database used in development.
 
 ## Testing
 
@@ -131,8 +91,6 @@ Automated tests were created using Django's test framework:
 - **Views Testing:** Confirm that the correct templates are rendered and HTTP responses are as expected.
 - **Models Testing:** Validate that models behave as expected, including default values and field constraints.
 
-![Automated Testing](docs/images/automated-tests.jpg)
-
 ## Deployment
 
 The app was deployed to Heroku using the following steps:
@@ -162,4 +120,4 @@ The app was deployed to Heroku using the following steps:
 
 - **Code Institute:** For providing the foundation in Django development through their tutorials.
 - **YouTube Tutorials:** Several tutorials were used to understand and implement features in the app.
-- **Freepik and Vecteezy:** For providing images used in the project.
+- **Chat GPT:** For providing knowledge used in the project.

@@ -7,6 +7,7 @@ from django.shortcuts import render
 
 # Create your views here.
 
+
 @login_required
 def create_recipe(request):
     if request.method == 'POST':
@@ -20,19 +21,25 @@ def create_recipe(request):
         form = RecipeForm()
     return render(request, 'recipes/recipe_form.html', {'form': form})
 
+
 @login_required
 def recipe_list(request):
     query = request.GET.get('q')
     if query:
-        recipes = Recipe.objects.filter(Q(title__icontains=query) | Q(ingredients__icontains=query), created_by=request.user)
+        recipes = Recipe.objects.filter(
+         Q(title__icontains=query) | Q(ingredients__icontains=query),
+         created_by=request.user
+         )
     else:
         recipes = Recipe.objects.filter(created_by=request.user)
     return render(request, 'recipes/recipe_list.html', {'recipes': recipes})
+
 
 @login_required
 def recipe_detail(request, id):
     recipe = get_object_or_404(Recipe, id=id, created_by=request.user)
     return render(request, 'recipes/recipe_detail.html', {'recipe': recipe})
+
 
 @login_required
 def edit_recipe(request, id):
@@ -46,6 +53,7 @@ def edit_recipe(request, id):
         form = RecipeForm(instance=recipe)
     return render(request, 'recipes/recipe_form.html', {'form': form})
 
+
 @login_required
 def delete_recipe(request, id):
     recipe = get_object_or_404(Recipe, id=id, created_by=request.user)
@@ -53,6 +61,7 @@ def delete_recipe(request, id):
         recipe.delete()
         return redirect('recipe_list')
     return render(request, 'recipes/recipe_detail.html', {'recipe': recipe})
+
 
 def index(request):
     recipes = Recipe.objects.all()[:6]  # Get the latest 6 recipes
