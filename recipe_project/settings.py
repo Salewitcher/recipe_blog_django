@@ -27,7 +27,6 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-j!bihixe82e+to&9ufg=zb#)9t)@1mf!zl0j0yvu6$%hat818r'
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -73,16 +72,6 @@ SOCIALACCOUNT_PROVIDERS = {
             'key': ''
         }
     },
-    # 'google': {
-    #     # For each OAuth based provider, either add a ``SocialApp``
-    #     # (``socialaccount`` app) containing the required client
-    #     # credentials, or list them here:
-    #     'APP': {
-    #         'client_id': '123',
-    #         'secret': '456',
-    #         'key': ''
-    #     }
-    # }    I PUT THIS ABOVE, IS IT CORRECT?
 }
 
 
@@ -149,16 +138,11 @@ WSGI_APPLICATION = 'recipe_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-#  }
 
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

@@ -57,6 +57,18 @@ There are a few features that I would like to implement in future releases:
 
 ## Testing
 
+### PEP8 Testing Screenshots
+
+(docs/images/pep8_1.png)
+(docs/images/pep8_2.png)
+(docs/images/pep8_3.png)
+(docs/images/pep8_4.png)
+(docs/images/pep8_5.png)
+
+### Lighthouse Testing Screenshots
+
+
+
 ### User Story Testing
 
 #### User Registration and Login
@@ -120,4 +132,4 @@ The app was deployed to Heroku using the following steps:
 
 - **Code Institute:** For providing the foundation in Django development through their tutorials.
 - **YouTube Tutorials:** Several tutorials were used to understand and implement features in the app.
-- **Chat GPT:** For providing knowledge used in the project.
+- **Chat GPT:** For providing help and knowledge used in the project.
