@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
 Home - Recipe Project
@@ -17,8 +18,10 @@ Home - Recipe Project
         {% for recipe in recipes %}
         <div class="col-md-4">
             <div class="card mb-4 h-100">
-                {% if recipe.image %}
-                    <img class="card-img-top" src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
+                {% if "placeholder" in recipe.featured_image.url %}
+                <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                {% else %}
+                <img class="card-img-top" src="{{ recipe.featured_image.url }}" alt="{{ recipe.title }}">
                 {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ recipe.title }}</h5>

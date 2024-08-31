@@ -29,13 +29,13 @@ User stories define the functionality and features of the Recipe Blog app from t
 ## Features 
 
 - **User Registration and Authentication:** Users can create accounts, log in, and securely manage their recipes.
-![Registration and login](docs/images/register.png) (docs/images/login.png)
+![Registration and login](docs/images/register.png)
 
 - **Recipe Management:** Users can add, edit, and delete recipes, and upload images to make their recipes more appealing.
 ![Recipe Management](docs/images/recipe-management.png) 
 
 - **Search Functionality:** Users can search for recipes based on the title or ingredients.
-![Search Functionality](docs/images/search-functionality.jpg)  
+![Search Functionality](docs/images/search-functionality.png)  
 
 ## Future Features
 
