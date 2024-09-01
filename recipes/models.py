@@ -6,7 +6,6 @@ class Recipe(models.Model):
     ingredients = models.TextField()
     instructions = models.TextField()
     image = models.ImageField(upload_to='recipes/', null=True, blank=True)
-    featured_image = models.ImageField(upload_to='featured/', null=True, blank=True)  # Use ImageField if you're not using Cloudinary
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
