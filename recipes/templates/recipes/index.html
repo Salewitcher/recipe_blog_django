@@ -18,10 +18,12 @@ Home - Recipe Project
         {% for recipe in recipes %}
         <div class="col-md-4">
             <div class="card mb-4 h-100">
-                {% if "placeholder" in recipe.featured_image.url %}
-                <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
-                {% else %}
+                {% if recipe.featured_image and not "placeholder" in recipe.featured_image.url %}
                 <img class="card-img-top" src="{{ recipe.featured_image.url }}" alt="{{ recipe.title }}">
+                {% elif recipe.image %}
+                <img class="card-img-top" src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
+                {% else %}
+                <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
                 {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ recipe.title }}</h5>

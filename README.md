@@ -54,6 +54,8 @@ There are a few features that I would like to implement in future releases:
 - **[CSS](https://en.wikipedia.org/wiki/CSS):** Style sheet language for designing web pages.
 - **[JavaScript](https://en.wikipedia.org/wiki/JavaScript):** Programming language for interactive web elements.
 - **[PostgreSQL](https://www.postgresql.org/):** Database used in development.
+- **[Cloudinary](https://cloudinary.com/):** Cloud-based image and video management service used in development.
+
 
 ## Testing
 
