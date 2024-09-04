@@ -82,6 +82,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -93,6 +94,7 @@ INSTALLED_APPS = [
     'users',
     'recipes',
     'widget_tweaks',
+    'cloudinary',
 ]
 
 
