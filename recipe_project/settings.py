@@ -15,7 +15,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', 'sasho-django.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', 'sasho-django-c2b352cc255f.herokuapp.com', '127.0.0.1']
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
