@@ -61,14 +61,16 @@ There are a few features that I would like to implement in future releases:
 
 ### PEP8 Testing Screenshots
 
-(docs/images/pep8_1.png)
-(docs/images/pep8_2.png)
-(docs/images/pep8_3.png)
-(docs/images/pep8_4.png)
-(docs/images/pep8_5.png)
+![CI Python Linter](docs/images/pep8_1.png)
+![CI Python Linter](docs/images/pep8_2.png)
+![CI Python Linter](docs/images/pep8_3.png)
+![CI Python Linter](docs/images/pep8_4.png)
+![CI Python Linter](docs/images/pep8_5.png)
 
 ### Lighthouse Testing Screenshots
 
+![Lighthouse Mobile Test](docs/images/lighthouse_mobile.png)
+![Lighthouse Desktop Test](docs/images/lighthouse_desktop.png)
 
 
 ### User Story Testing
