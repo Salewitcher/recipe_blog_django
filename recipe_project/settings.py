@@ -69,7 +69,7 @@ INSTALLED_APPS = [
 # Authentication settings
 SITE_ID = 1
 LOGIN_REDIRECT_URL = 'dashboard'
-LOGOUT_REDIRECT_URL = '/accounts/login/'
+LOGOUT_REDIRECT_URL = 'login'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
